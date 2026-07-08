@@ -4,7 +4,30 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 const time = ref('--:--')
 const size = ref('')
 const pct = ref(0)
+const detached = ref(false)
 let timer
+let prefixTimer
+let prefix = false
+
+function onKey(e) {
+  if (detached.value) {
+    e.preventDefault()
+    detached.value = false
+    return
+  }
+  if (e.ctrlKey && e.key === 'b') {
+    e.preventDefault()
+    prefix = true
+    clearTimeout(prefixTimer)
+    prefixTimer = setTimeout(() => (prefix = false), 1500)
+    return
+  }
+  if (prefix && e.key === 'd') {
+    e.preventDefault()
+    prefix = false
+    detached.value = true
+  }
+}
 
 function tick() {
   time.value = new Intl.DateTimeFormat('en-GB', {
@@ -30,12 +53,14 @@ onMounted(() => {
   timer = setInterval(tick, 30000)
   window.addEventListener('resize', measure)
   window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('keydown', onKey)
 })
 
 onBeforeUnmount(() => {
   clearInterval(timer)
   window.removeEventListener('resize', measure)
   window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('keydown', onKey)
 })
 </script>
 
@@ -52,6 +77,10 @@ onBeforeUnmount(() => {
         <span class="seg">{{ size }}</span>
         <span class="seg">{{ time }}</span>
       </span>
+    </div>
+    <div v-if="detached" class="detach" @click="detached = false">
+      <p>[detached (from session fberman.me)]</p>
+      <p class="hint">press any key to attach</p>
     </div>
   </footer>
 </template>
@@ -91,6 +120,32 @@ onBeforeUnmount(() => {
 
 .dim {
   opacity: 0.6;
+}
+
+.detach {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg-deep);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.detach .hint {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.detach p {
+  margin: 0;
 }
 
 @media (max-width: 720px) {
