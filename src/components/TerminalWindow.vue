@@ -166,8 +166,13 @@ async function startDoom() {
   doom.value = true
   await nextTick()
   try {
-    await loadScriptOnce('https://v8.js-dos.com/latest/js-dos.js', 'https://v8.js-dos.com/latest/js-dos.css')
-    dosProps = window.Dos(doomEl.value, { url: '/doom.jsdos', autoStart: true, kiosk: true })
+    await loadScriptOnce('/jsdos/js-dos.js', '/jsdos/js-dos.css')
+    dosProps = window.Dos(doomEl.value, {
+      url: '/doom.jsdos',
+      pathPrefix: '/jsdos/emulators/',
+      autoStart: true,
+      kiosk: true,
+    })
   } catch {
     closeDoom()
     pushStatic([{ t: 'doom: failed to load js-dos engine (offline?)', c: '' }])
