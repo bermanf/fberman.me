@@ -354,7 +354,8 @@ onBeforeUnmount(() => {
 
 .term-line {
   min-height: 1.65em;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 .kw {

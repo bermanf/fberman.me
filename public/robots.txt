@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fberman.me/sitemap.xml
