@@ -63,6 +63,9 @@ const mode = ref('auto')
 const input = ref('')
 const bodyEl = ref(null)
 const inputEl = ref(null)
+const doom = ref(false)
+const doomEl = ref(null)
+let dosProps = null
 let session = 0
 let playIndex = 0
 let cancelled = false
@@ -144,6 +147,43 @@ function scrollBottom() {
   })
 }
 
+function loadScriptOnce(src, css) {
+  if (window.Dos) return Promise.resolve()
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = css
+  document.head.append(link)
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script')
+    s.src = src
+    s.onload = resolve
+    s.onerror = () => reject(new Error('js-dos load failed'))
+    document.head.append(s)
+  })
+}
+
+async function startDoom() {
+  doom.value = true
+  await nextTick()
+  try {
+    await loadScriptOnce('https://v8.js-dos.com/latest/js-dos.js', 'https://v8.js-dos.com/latest/js-dos.css')
+    dosProps = window.Dos(doomEl.value, { url: '/doom.jsdos', autoStart: true, kiosk: true })
+  } catch {
+    closeDoom()
+    pushStatic([{ t: 'doom: failed to load js-dos engine (offline?)', c: '' }])
+    scrollBottom()
+  }
+}
+
+function closeDoom() {
+  try {
+    dosProps?.stop()
+  } catch {}
+  dosProps = null
+  doom.value = false
+  focusInput()
+}
+
 function execute() {
   const raw = input.value
   input.value = ''
@@ -155,7 +195,11 @@ function execute() {
   let out = []
   switch (cmd) {
     case 'help':
-      out = [[tx('commands: whoami · ls · cat <file> · sudo hire-me · clear · exit')]]
+      out = [[tx('commands: whoami · ls · cat <file> · doom · sudo hire-me · clear · exit')]]
+      break
+    case 'doom':
+      out = [[cm('loading DOOM.EXE — shareware episode 1…')]]
+      startDoom()
       break
     case 'whoami':
       out = [[tx('Fedor Berman — senior backend engineer · go · fintech & crypto')]]
@@ -199,6 +243,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   cancelled = true
   session++
+  if (dosProps) closeDoom()
 })
 </script>
 
@@ -236,6 +281,15 @@ onBeforeUnmount(() => {
       aria-label="terminal input"
       @keydown.enter="execute"
     />
+    <Teleport to="body">
+      <div v-if="doom" class="doom-overlay">
+        <div class="doom-bar">
+          <span>doom.exe — shareware</span>
+          <button type="button" @click="closeDoom">✕ quit</button>
+        </div>
+        <div ref="doomEl" class="doom-screen" />
+      </div>
+    </Teleport>
   </div>
 </template>
 
@@ -344,5 +398,47 @@ onBeforeUnmount(() => {
   50% {
     opacity: 0;
   }
+}
+
+.doom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+.doom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg-deep);
+  border-bottom: 1px solid var(--border);
+}
+
+.doom-bar button {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-hi);
+  background: none;
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.doom-bar button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.doom-screen {
+  flex: 1;
+  min-height: 0;
 }
 </style>
