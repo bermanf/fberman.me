@@ -49,6 +49,10 @@ export function motionDirectives(app) {
       el.classList.add('reveal', `reveal-${opts.style || 'up'}`)
       if (opts.delay) el.style.setProperty('--rd', `${opts.delay}s`)
       io().observe(el)
+      setTimeout(() => {
+        const r = el.getBoundingClientRect()
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('revealed')
+      }, 300)
     },
   })
 

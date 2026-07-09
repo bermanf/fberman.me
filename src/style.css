@@ -26,7 +26,6 @@ html {
 
 body {
   margin: 0;
-  overflow-x: clip;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
@@ -57,6 +56,11 @@ a {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+main {
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .container {
