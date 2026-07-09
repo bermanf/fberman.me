@@ -1,8 +1,21 @@
+<script setup>
+import { ref } from 'vue'
+
+const open = ref(false)
+</script>
+
 <template>
   <header class="nav">
     <div class="container nav-inner">
       <a href="/" class="logo">fberman.me</a>
-      <nav class="links">
+      <button
+        type="button"
+        class="burger"
+        :aria-expanded="open"
+        aria-label="menu"
+        @click="open = !open"
+      >{{ open ? '✕' : '≡' }}</button>
+      <nav class="links" :class="{ open }" @click="open = false">
         <a href="/#whoami">about</a>
         <a href="/#work">work</a>
         <a href="/#stack">stack</a>
@@ -42,6 +55,18 @@
   color: var(--accent);
 }
 
+.burger {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-hi);
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
 .links {
   display: flex;
   gap: 28px;
@@ -58,9 +83,32 @@
   color: var(--text-hi);
 }
 
-@media (max-width: 520px) {
+@media (max-width: 680px) {
+  .burger {
+    display: block;
+  }
+
   .links {
-    gap: 16px;
+    display: none;
+  }
+
+  .links.open {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 18px 24px 22px;
+    background: rgba(13, 10, 22, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .links.open a {
+    font-size: 15px;
   }
 }
 </style>
