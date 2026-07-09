@@ -16,10 +16,10 @@ import photo from '../assets/me.jpg'
       </div>
       <div v-reveal="{ delay: 0.2 }" class="about-text">
         <p>
-          Backend engineer based in Belgrade. The last 5+ years I've been
-          building fintech and crypto systems in Go: Visa card issuing, a
-          Bitcoin DEX integration, fiat on/off-ramps — and before that,
-          infrastructure for a mail service sustaining 10k+ RPS.
+          Backend engineer based in Belgrade. 5+ years of building backends
+          in Go — fintech, high-load distributed systems, and now crypto:
+          Visa card issuing, a Bitcoin DEX integration, fiat on/off-ramps.
+          Earlier — infrastructure for a mail service sustaining 10k+ RPS.
         </p>
         <p>
           I like owning things end-to-end: API and schema design, load tests,

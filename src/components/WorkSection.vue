@@ -13,14 +13,14 @@ const projects = [
     tags: 'go · tsnet · aws',
   },
   {
-    title: 'Fiat onramp integration audit',
-    text: 'USD → USDC over Lightning Network: API gap analysis and mapping of compliance constraints before the build.',
-    tags: 'lightning · usdc · compliance',
+    title: 'Billion-row ClickHouse analytics optimization',
+    text: 'Eliminated a billion-row JOIN in cohort reports by pre-computing the metric via Scylla lookups across 4 services — with a backfill worker for ~820K customers.',
+    tags: 'go · clickhouse · scylla',
   },
   {
-    title: 'API clients codegen & CI tooling',
-    text: 'OpenAPI client generation with Kiota, Grafana MCP wired into the CI pipeline.',
-    tags: 'openapi · c# · ci',
+    title: 'Mail infrastructure at 10k+ RPS',
+    text: 'MySQL → Tarantool replication with strong consistency, sharding and routing fixes in proxies, low-level serialization optimizations for a distributed mail service.',
+    tags: 'go · tarantool · mysql · kafka',
   },
 ]
 </script>
