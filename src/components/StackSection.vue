@@ -4,11 +4,11 @@ import SectionHeader from './SectionHeader.vue'
 const groups = [
   {
     name: 'languages',
-    items: ['go', 'sql', 'lua', 'bash'],
+    items: ['go', 'sql', 'bash'],
   },
   {
     name: 'databases',
-    items: ['postgresql', 'clickhouse', 'starrocks', 'mysql', 'tarantool', 'mongodb', 'redis/valkey'],
+    items: ['postgresql', 'clickhouse', 'starrocks', 'mysql', 'scylladb/cassandra', 'tarantool', 'redis/valkey', 'mongodb'],
   },
   {
     name: 'messaging & apis',
@@ -16,7 +16,7 @@ const groups = [
   },
   {
     name: 'infra',
-    items: ['aws', 'kubernetes', 'terraform', 'docker', 'gitlab ci/cd', 'puppet', 'ansible', 'grafana', 'elk/loki'],
+    items: ['aws', 'kubernetes', 'terraform', 'docker', 'gitlab ci/cd', 'puppet', 'grafana', 'elk/loki', 'linux'],
   },
   {
     name: 'blockchain',

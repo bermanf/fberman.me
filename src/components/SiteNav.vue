@@ -8,20 +8,23 @@ const open = ref(false)
   <header class="nav">
     <div class="container nav-inner">
       <a href="/" class="logo">fberman.me</a>
-      <button
-        type="button"
-        class="burger"
-        :aria-expanded="open"
-        aria-label="menu"
-        @click="open = !open"
-      >{{ open ? '✕' : '≡' }}</button>
-      <nav class="links" :class="{ open }" @click="open = false">
-        <a href="/#whoami">about</a>
-        <a href="/#work">work</a>
-        <a href="/#stack">stack</a>
-        <a href="/#experience">experience</a>
-        <a href="/#contact">contact</a>
-      </nav>
+      <div class="right">
+        <nav class="links" :class="{ open }" @click="open = false">
+          <a href="/#whoami">about</a>
+          <a href="/#work">work</a>
+          <a href="/#stack">stack</a>
+          <a href="/#experience">experience</a>
+          <a href="/#contact">contact</a>
+        </nav>
+        <a class="cv-btn" href="/Fedor_Berman_CV.pdf" download>cv ↓</a>
+        <button
+          type="button"
+          class="burger"
+          :aria-expanded="open"
+          aria-label="menu"
+          @click="open = !open"
+        >{{ open ? '✕' : '≡' }}</button>
+      </div>
     </div>
   </header>
 </template>
@@ -53,6 +56,28 @@ const open = ref(false)
 .logo::before {
   content: '~/';
   color: var(--accent);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.cv-btn {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--bg-deep);
+  box-shadow: 0 0 18px rgba(127, 119, 221, 0.35);
+  transition: box-shadow 0.15s;
+}
+
+.cv-btn:hover {
+  box-shadow: 0 0 28px rgba(127, 119, 221, 0.55);
 }
 
 .burger {

@@ -22,8 +22,7 @@ export const jobs = [
     bullets: [
       'Launched Visa cards in the app by integrating the Wirex Banking-as-a-Service platform: a Go microservice issuing user-scoped auth tokens for direct client-to-Wirex API calls, mirroring card state, and turning webhooks + polling into a transaction feed with push notifications — live across 3 environments.',
       'Enabled in-app Bitcoin trading via the Flashnet DEX (Spark): quote/estimate flow, webhook pipeline, and buy-and-bridge market transactions.',
-      'Cut profile search latency by redesigning PostgreSQL full-text-search indexes, validated with purpose-built load tests.',
-      'Scaled contact-book-to-profile matching to 50M contacts by rebuilding the pipeline: batch migrators, phone-number normalization, partial indexes.',
+      'Scaled contact-to-profile matching to 50M contacts by rebuilding the pipeline: batch migrators, phone-number normalization, partial indexes; cut profile search latency with redesigned PostgreSQL full-text-search indexes, validated by purpose-built load tests.',
       'Built a contest & leaderboard platform from scratch — seasons, invite reconciliation, winner lottery, on-chain payouts, event-driven push notifications — deployed to AWS in under 3 weeks.',
       'Reduced payment-fraud surface by hardening fiat on/off-ramp webhook verification (constant-time signature comparison) across providers, including MoonPay.',
       'Shipped encrypted-message caching for XMTP chat; extended the push service with iOS Live Activities.',
@@ -45,10 +44,9 @@ export const jobs = [
       'Researched a ClickHouse → StarRocks migration: prototyped, benchmarked on production data, delivered a technical assessment.',
       'Designed and shipped OAuth 2.0 authentication from scratch (redirect flow, token exchange, refresh tokens); integrated Stripe Payment Links into billing (webhooks, transaction mapping); migrated password hashing SHA1 → bcrypt with transparent re-hash on login — zero downtime.',
       'Built ad-network API integrations for cost import and conversion export with deduplication, rate-limit handling and retries; event-driven NSQ workers for click/conversion/billing processing with batching and exponential backoff.',
-      'Contributed to the Customer Data Platform: first/last-touch attribution, cross-browser fingerprint matching, postback-token deduplication.',
-      'Integrated UserPilot product analytics; built a feature-usage watcher over a 30-day window, triggering retention events for the product team.',
+      'Contributed to the Customer Data Platform (CDP): first/last-touch attribution, cross-browser fingerprint matching, postback-token deduplication.',
     ],
-    tags: 'go · clickhouse · scylla · starrocks · mongodb · nsq · stripe',
+    tags: 'go · clickhouse · scylladb · starrocks · mongodb · nsq · oauth 2.0 · stripe',
   },
   {
     slug: 'vktech',
@@ -61,13 +59,11 @@ export const jobs = [
     summary:
       'Infrastructure for VK Mail — the mail service of the largest Russian social network, sustaining 10k+ RPS.',
     bullets: [
-      'Contributed to a distributed mail service sustaining 10k+ RPS: MySQL → Tarantool replication for user data and emails, sharding and routing fixes in Tarantool proxies, low-level serialization optimizations reducing latency; participated in architecture decisions on scalability and fault tolerance.',
-      'Developed a high-load MySQL → Tarantool replication service with strong consistency guarantees; designed and debugged cross-zone event-driven replication on Kafka.',
-      'Designed and implemented an artifact delivery service with S3 integration — storage, versioning, reliable delivery — wired into the team’s CI/CD pipeline.',
-      'Migrated critical services from bare metal and on-prem Kubernetes to the cloud; authored Kubernetes and Puppet manifests.',
-      'Regular on-call duty during failure drills; practiced major-incident handling and disaster-recovery scenarios.',
+      'Contributed to a distributed mail service sustaining 10k+ RPS: implemented MySQL → Tarantool replication with strong consistency, fixed sharding and routing issues in Tarantool proxies, and optimized low-level data serialization — reducing latency and improving stability.',
+      'Designed and debugged cross-zone event-driven replication on Apache Kafka; built an artifact delivery service with S3 integration wired into the team’s CI/CD pipeline.',
+      'Migrated critical services from bare metal and on-prem Kubernetes to the cloud; authored Kubernetes and Puppet manifests; took regular on-call duty during failure drills and disaster-recovery scenarios.',
     ],
-    tags: 'go · tarantool · mysql · kafka · kubernetes · puppet',
+    tags: 'go · mysql · tarantool · apache kafka · kubernetes · puppet · s3 · ci/cd',
   },
   {
     slug: 'simbirsoft',
@@ -76,14 +72,14 @@ export const jobs = [
     role: 'Backend Engineer',
     dates: 'Oct 2023 — Nov 2024 · 1 yr 2 mo',
     location: 'Ulyanovsk, Russia',
-    about: 'Software development company; enterprise outsourcing projects.',
+    about: 'Software development company serving enterprise clients.',
     summary:
       'Software development company. Enterprise projects for a major mobile operator and an electronics retail chain.',
     bullets: [
-      'Decomposed a legacy monolith into microservices for one of the largest mobile operators to improve scalability and resilience under uneven load; designed databases for the new services, ran code reviews, managed releases.',
-      'Designed and built a microservice for a major electronics retail chain — architecture and database design, Yandex Pay integration, full technical documentation; supported the release cycle and production monitoring.',
+      'Decomposed a legacy monolith into Go microservices for one of the largest mobile network operators; designed databases for the new services, ran code reviews and managed releases.',
+      'Designed and built a microservice for a major electronics retail chain, including Yandex Pay integration and full technical documentation.',
     ],
-    tags: 'go · postgresql · microservices · yandex pay',
+    tags: 'go · postgresql · microservices · rest',
   },
   {
     slug: 'shtrafovnet',
@@ -96,8 +92,7 @@ export const jobs = [
     summary:
       'Traffic-fines checking and payment service. Monolith decomposition and a billing microservice.',
     bullets: [
-      'Decomposed a monolithic application into separate services; shipped new features across the system.',
-      'Designed and implemented a billing microservice, adapting the system for the required load and optimizing queries for performance.',
+      'Split a monolith into services; designed and shipped a billing microservice, adapting it for required load and optimizing SQL queries for performance.',
     ],
     tags: 'go · billing',
   },
@@ -112,8 +107,7 @@ export const jobs = [
     summary:
       'Product studio automating routine operations. Logging service and Telegram bots in Go — first production experience.',
     bullets: [
-      'Built a logging service in Go and Telegram bots on a custom in-house Telegram Bot API library; integrations with other microservices.',
-      'Wrote unit tests, did code reviews and bug fixing.',
+      'Built a logging service in Go and an in-house Telegram Bot API library used for automating routine operations; wrote unit tests and participated in code reviews.',
     ],
     tags: 'go · telegram bot api',
   },

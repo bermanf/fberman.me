@@ -52,7 +52,7 @@ const PROMPT = 'fedor@fberman.me:~$ '
 
 const shellFiles = {
   'stack.txt': 'go · postgresql · clickhouse · kafka · aws · k8s · terraform',
-  'resume.txt': '5+ years of fintech & crypto backends — full history at /experience/',
+  'resume.txt': 'full history: /experience/ · pdf: /Fedor_Berman_CV.pdf',
   'contact.txt': 'fyodorberman@gmail.com · t.me/TeoBy · github.com/bermanf',
 }
 
