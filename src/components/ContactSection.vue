@@ -4,7 +4,7 @@ import SectionHeader from './SectionHeader.vue'
 const links = [
   { label: 'telegram', href: 'https://t.me/TeoBy' },
   { label: 'github', href: 'https://github.com/bermanf' },
-  { label: 'linkedin', href: 'https://linkedin.com/in/fyodorberman' },
+  { label: 'linkedin', href: 'https://linkedin.com/in/fyodor-berman' },
 ]
 </script>
 
