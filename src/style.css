@@ -1,4 +1,22 @@
 :root {
+  --bg: #faf9fd;
+  --bg-deep: #f1eff8;
+  --accent: #5b51c9;
+  --accent-dim: #8d85d6;
+  --text-hi: #1d1733;
+  --text: #4a4468;
+  --text-dim: #6e679a;
+  --border: #e2def0;
+  --border-hi: #b9b3e0;
+  --nav-bg: rgba(250, 249, 253, 0.72);
+  --menu-bg: rgba(241, 239, 248, 0.96);
+
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+:root[data-theme='dark'] {
   --bg: #14101f;
   --bg-deep: #0d0a16;
   --accent: #7f77dd;
@@ -8,10 +26,8 @@
   --text-dim: #7c74a8;
   --border: #2a2140;
   --border-hi: #3c3489;
-
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --nav-bg: rgba(20, 16, 31, 0.72);
+  --menu-bg: rgba(13, 10, 22, 0.96);
 }
 
 *,

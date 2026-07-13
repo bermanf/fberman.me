@@ -2,6 +2,13 @@
 import { ref } from 'vue'
 
 const open = ref(false)
+const theme = ref(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light')
+
+function toggleTheme() {
+  theme.value = theme.value === 'dark' ? 'light' : 'dark'
+  document.documentElement.dataset.theme = theme.value
+  localStorage.setItem('theme', theme.value)
+}
 </script>
 
 <template>
@@ -16,6 +23,20 @@ const open = ref(false)
           <a href="/#experience">experience</a>
           <a href="/#contact">contact</a>
         </nav>
+        <button
+          type="button"
+          class="theme-btn"
+          :aria-label="theme === 'dark' ? 'switch to light theme' : 'switch to dark theme'"
+          @click="toggleTheme"
+        >
+          <svg v-if="theme === 'dark'" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+            <circle cx="8" cy="8" r="3.2" />
+            <path d="M8 1.5v1.8M8 12.7v1.8M1.5 8h1.8M12.7 8h1.8M3.4 3.4l1.3 1.3M11.3 11.3l1.3 1.3M12.6 3.4l-1.3 1.3M4.7 11.3l-1.3 1.3" />
+          </svg>
+          <svg v-else viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13.5 9.5A6 6 0 0 1 6.5 2.5a6 6 0 1 0 7 7z" />
+          </svg>
+        </button>
         <a class="cv-btn" href="/Fedor_Berman_CV.pdf" download>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M8 2v8m0 0l-3-3m3 3l3-3" />
@@ -40,7 +61,7 @@ const open = ref(false)
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(20, 16, 31, 0.72);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -89,6 +110,21 @@ const open = ref(false)
   box-shadow: 0 0 28px rgba(127, 119, 221, 0.55);
 }
 
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.theme-btn:hover {
+  color: var(--text-hi);
+}
+
 .burger {
   display: none;
   font-family: var(--font-mono);
@@ -135,7 +171,7 @@ const open = ref(false)
     left: 0;
     right: 0;
     padding: 18px 24px 22px;
-    background: rgba(13, 10, 22, 0.96);
+    background: var(--menu-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
