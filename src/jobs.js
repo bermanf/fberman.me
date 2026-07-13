@@ -13,7 +13,7 @@ export const jobs = [
     hash: 'f3a9c21',
     company: 'Alien',
     role: 'Backend Engineer',
-    dates: 'May 2026 — present',
+    dates: 'May 2026 — Jul 2026',
     location: 'remote · Serbia',
     about:
       'Crypto wallet & digital identity app: self-custodial wallet, payments, Visa cards, encrypted messaging. Shipping across 8 Go microservices, owning features end-to-end — from API and schema design to load testing and Terraform.',
