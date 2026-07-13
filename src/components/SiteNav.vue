@@ -4,6 +4,10 @@ import { ref } from 'vue'
 const open = ref(false)
 const theme = ref(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light')
 
+function trackCvDownload() {
+  window.goatcounter?.count({ path: 'cv-download', title: 'CV download', event: true })
+}
+
 function toggleTheme() {
   theme.value = theme.value === 'dark' ? 'light' : 'dark'
   document.documentElement.dataset.theme = theme.value
@@ -37,7 +41,7 @@ function toggleTheme() {
             <path d="M13.5 9.5A6 6 0 0 1 6.5 2.5a6 6 0 1 0 7 7z" />
           </svg>
         </button>
-        <a class="cv-btn" href="/Fedor_Berman_CV.pdf" download>
+        <a class="cv-btn" href="/Fedor_Berman_CV.pdf" download @click="trackCvDownload">
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M8 2v8m0 0l-3-3m3 3l3-3" />
             <path d="M2.5 13.5h11" />

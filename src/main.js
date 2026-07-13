@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import { startMotion, motionDirectives } from './motion.js'
+import './scrollDepth.js'
 
 startMotion()
 
