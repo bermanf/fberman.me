@@ -25,6 +25,11 @@ import photo from '../assets/me.jpg'
           I like owning things end-to-end: API and schema design, load tests,
           Terraform, on-call. Small diffs, boring tech, measurable results.
         </p>
+        <p>
+          Work status: Serbian temporary residence and work permit. Registered
+          sole proprietorship in Belgrade for B2B contracts, invoicing in EUR
+          or USD. CET time zone.
+        </p>
       </div>
     </div>
   </section>

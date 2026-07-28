@@ -23,8 +23,9 @@ function toggleTheme() {
         <nav class="links" :class="{ open }" @click="open = false">
           <a href="/#whoami">about</a>
           <a href="/#work">work</a>
-          <a href="/#stack">stack</a>
           <a href="/#experience">experience</a>
+          <a href="/#projects">projects</a>
+          <a href="/#stack">stack</a>
           <a href="/#contact">contact</a>
         </nav>
         <button

@@ -16,15 +16,23 @@ const groups = [
   },
   {
     name: 'infra',
-    items: ['aws', 'kubernetes', 'terraform', 'docker', 'gitlab ci/cd', 'puppet', 'grafana', 'elk/loki', 'linux'],
+    items: ['aws', 'kubernetes', 'terraform', 'docker', 'gitlab ci/cd', 'puppet', 'prometheus', 'grafana', 'elk/loki', 'linux'],
   },
   {
     name: 'blockchain',
     items: ['solana', 'bitcoin/spark', 'lightning network', 'xmtp'],
   },
   {
+    name: 'ai tooling',
+    items: ['claude (opus, fable)', 'mcp servers (grafana, postgresql)', 'agent skills for code review'],
+  },
+  {
     name: 'domains',
     items: ['card issuing', 'payments', 'on/off-ramps', 'dex & bitcoin', 'high-load systems'],
+  },
+  {
+    name: 'spoken',
+    items: ['russian (native)', 'english (b1)'],
   },
 ]
 </script>

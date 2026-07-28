@@ -9,8 +9,9 @@ import TerminalWindow from './TerminalWindow.vue'
       <h1 v-reveal="{ delay: 0.08 }">I build fintech &amp; crypto infrastructure in Go</h1>
       <p v-reveal="{ delay: 0.16 }" class="sub">
         5+ years shipping card issuing, payments and high-load distributed
-        systems — from schema design to production on-call. Currently building
-        Visa cards for a self-custodial crypto wallet.
+        systems — from schema design to production on-call. Most recently
+        launched Visa cards and a Bitcoin DEX integration for a crypto wallet
+        startup.
       </p>
       <div v-reveal="{ delay: 0.24 }" class="cta-row">
         <a class="btn btn-primary" href="mailto:fyodorberman@gmail.com">get in touch</a>

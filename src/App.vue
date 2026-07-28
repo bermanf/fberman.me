@@ -4,6 +4,8 @@ import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import WorkSection from './components/WorkSection.vue'
 import ExperienceCarousel from './components/ExperienceCarousel.vue'
+import OpenSourceSection from './components/OpenSourceSection.vue'
+import EducationSection from './components/EducationSection.vue'
 import StackSection from './components/StackSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
@@ -16,6 +18,8 @@ import SiteFooter from './components/SiteFooter.vue'
     <AboutSection />
     <WorkSection />
     <ExperienceCarousel />
+    <OpenSourceSection />
+    <EducationSection />
     <StackSection />
     <ContactSection />
   </main>

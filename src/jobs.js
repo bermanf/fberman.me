@@ -16,13 +16,13 @@ export const jobs = [
     dates: 'May 2026 — Jul 2026',
     location: 'remote · Serbia',
     about:
-      'Crypto wallet & digital identity app: self-custodial wallet, payments, Visa cards, encrypted messaging. Shipping across 8 Go microservices, owning features end-to-end — from API and schema design to load testing and Terraform.',
+      'Crypto wallet & digital identity app: self-custodial wallet, payments, Visa cards, encrypted messaging. Shipping across 8 Go microservices, owning features end-to-end — from API and schema design to load testing and Terraform. In July 2026 the company pivoted to an AI product and cut the entire backend team.',
     summary:
       'Self-custodial crypto wallet & digital identity app. I ship features end-to-end across 8 Go microservices — payments, cards, encrypted messaging.',
     bullets: [
       'Launched Visa cards in the app by integrating the Wirex Banking-as-a-Service platform: a Go microservice issuing user-scoped auth tokens for direct client-to-Wirex API calls, mirroring card state, and turning webhooks + polling into a transaction feed with push notifications — live across 3 environments.',
       'Enabled in-app Bitcoin trading via the Flashnet DEX (Spark): quote/estimate flow, webhook pipeline, and buy-and-bridge market transactions.',
-      'Scaled contact-to-profile matching to 50M contacts by rebuilding the pipeline: batch migrators, phone-number normalization, partial indexes; cut profile search latency with redesigned PostgreSQL full-text-search indexes, validated by purpose-built load tests.',
+      'Scaled contact-to-profile matching to 50M contacts by rebuilding the pipeline: batch migrators, phone-number normalization, partial indexes. Eliminated search timeouts by replacing full-table LIKE scans with a GIN-indexed trigram tsvector over concatenated profile fields, cutting lookups by phone, name or address to sub-second, validated by purpose-built load tests.',
       'Built a contest & leaderboard platform from scratch — seasons, invite reconciliation, winner lottery, on-chain payouts, event-driven push notifications — deployed to AWS in under 3 weeks.',
       'Reduced payment-fraud surface by hardening fiat on/off-ramp webhook verification (constant-time signature comparison) across providers, including MoonPay.',
       'Shipped encrypted-message caching for XMTP chat; extended the push service with iOS Live Activities.',
