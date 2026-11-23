@@ -18,7 +18,7 @@ function prev() {
 
 <template>
   <section id="experience" class="section container">
-    <SectionHeader v-reveal cmd="less ./experience.log" title="Where I've worked" />
+    <SectionHeader v-reveal cmd="less ./projects.log" title="Track record" />
     <div v-reveal="{ delay: 0.15 }" class="pager">
       <Transition name="slide" mode="out-in">
         <a :key="i" class="slide" :href="`/experience/#${job.slug}`">

@@ -10,10 +10,10 @@ import { jobs, logoFor } from './jobs.js'
     <section class="section container">
       <div class="page-head" v-reveal>
         <p class="cmd">$ git log --author=fedor --all</p>
-        <h1>Experience</h1>
+        <h1>Track record</h1>
         <p class="lede">
-          5+ years, six teams — from a product studio to the largest Russian
-          social network to a crypto wallet startup. Full detail below;
+          5+ years of backend delivery — B2B contracts for fintech and
+          analytics products, and earlier in-house roles. Full detail below;
           the short version is on the <a href="/">main page</a>.
         </p>
       </div>

@@ -19,7 +19,6 @@ import photo from '../assets/me.jpg'
           Backend engineer based in Belgrade. 5+ years of building backends
           in Go — fintech, high-load distributed systems, and now crypto:
           Visa card issuing, a Bitcoin DEX integration, fiat on/off-ramps.
-          Earlier — infrastructure for a mail service sustaining 10k+ RPS.
         </p>
         <p>
           I like owning things end-to-end: API and schema design, load tests,

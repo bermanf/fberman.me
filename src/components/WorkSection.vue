@@ -17,11 +17,6 @@ const projects = [
     text: 'Eliminated a billion-row JOIN in cohort reports by pre-computing the metric via Scylla lookups across 4 services — with a backfill worker for ~820K customers.',
     tags: 'go · clickhouse · scylla',
   },
-  {
-    title: 'Mail infrastructure at 10k+ RPS',
-    text: 'MySQL → Tarantool replication with strong consistency, sharding and routing fixes in proxies, low-level serialization optimizations for a distributed mail service.',
-    tags: 'go · tarantool · mysql · kafka',
-  },
 ]
 </script>
 
