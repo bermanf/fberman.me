@@ -12,7 +12,7 @@ const links = [
   <section id="contact" class="section container">
     <SectionHeader v-reveal cmd="ping fedor" title="Get in touch" />
     <p v-reveal="{ delay: 0.1 }" class="pitch">
-      Open to interesting backend work — contracts and full-time.
+      Available for B2B projects and long-term contracts.
       Reply time is usually under 24h.
     </p>
     <a v-reveal="{ delay: 0.2 }" class="btn-mail" href="mailto:fyodorberman@gmail.com">fyodorberman@gmail.com</a>

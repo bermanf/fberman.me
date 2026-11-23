@@ -26,8 +26,8 @@ import photo from '../assets/me.jpg'
           Terraform, on-call. Small diffs, boring tech, measurable results.
         </p>
         <p>
-          Work status: Serbian temporary residence and work permit. Registered
-          sole proprietorship in Belgrade for B2B contracts, invoicing in EUR
+          Business: registered sole proprietor (preduzetnik) in Belgrade,
+          Serbia. Services delivered under B2B contracts, invoicing in EUR
           or USD. CET time zone.
         </p>
       </div>

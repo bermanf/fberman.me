@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
     <div class="container status">
       <span class="seg host">[fberman.me]</span>
       <span class="seg">uptime: 5y+ in prod</span>
-      <span class="seg">status: <span class="ok">open to interesting work</span></span>
+      <span class="seg">status: <span class="ok">accepting new projects</span></span>
       <span class="seg">loc: Belgrade</span>
       <span class="right">
         <span class="seg dim">ctrl+b d to detach</span>

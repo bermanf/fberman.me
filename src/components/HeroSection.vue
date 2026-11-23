@@ -5,19 +5,19 @@ import TerminalWindow from './TerminalWindow.vue'
 <template>
   <section class="hero container">
     <div class="hero-text">
-      <p v-reveal class="eyebrow">Fedor Berman · senior backend engineer</p>
-      <h1 v-reveal="{ delay: 0.08 }">I build fintech &amp; crypto infrastructure in Go</h1>
+      <p v-reveal class="eyebrow">Fedor Berman · backend development services</p>
+      <h1 v-reveal="{ delay: 0.08 }">Backend development for fintech &amp; payments in Go</h1>
       <p v-reveal="{ delay: 0.16 }" class="sub">
-        5+ years shipping card issuing, payments and high-load distributed
-        systems — from schema design to production on-call. Most recently
-        launched Visa cards and a Bitcoin DEX integration for a crypto wallet
-        startup.
+        I help companies design, build and run card issuing, payments and
+        high-load distributed systems — from schema design to production
+        on-call. 5+ years of delivery for fintech, analytics and
+        high-traffic products.
       </p>
       <div v-reveal="{ delay: 0.24 }" class="cta-row">
-        <a class="btn btn-primary" href="mailto:fyodorberman@gmail.com">get in touch</a>
+        <a class="btn btn-primary" href="mailto:fyodorberman@gmail.com">discuss a project</a>
         <a class="btn btn-ghost" href="#work">view work →</a>
       </div>
-      <p v-reveal="{ delay: 0.32 }" class="avail"><span class="dot-pulse" />open to contract &amp; full-time work</p>
+      <p v-reveal="{ delay: 0.32 }" class="avail"><span class="dot-pulse" />accepting B2B projects · invoicing in EUR/USD</p>
     </div>
     <div v-reveal="{ style: 'right', delay: 0.2 }">
       <TerminalWindow v-parallax="0.1" class="hero-term" />
